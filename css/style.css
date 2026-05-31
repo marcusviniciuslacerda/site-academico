@@ -1,33 +1,33 @@
 
 img {
-    width: 100px;
+    width: 250px;
     height: 250px;
     object-fit: cover;
 }
 
-.calendar-grid{
-    display:grid;
-    grid-template-columns:repeat(7,1fr);
-    gap:15px;
-    margin-top:20px;
+.calendar-section {
+  padding: 2rem 0 4rem;
 }
 
-.calendar-day{
-    background:#fff;
-    padding:20px;
-    text-align:center;
-    border-radius:12px;
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
-    font-weight:bold;
+.section-header {
+  margin-bottom: 1.5rem;
 }
 
-.calendar-day small{
-    display:block;
-    margin-top:5px;
-    font-size:12px;
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
 }
 
-.highlight{
-    background:#2E7D32;
-    color:white;
+.calendar-day {
+  padding: 1rem;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.calendar-day.highlight {
+  background: #eff6ff;
+  border-color: #bfdbfe;
 }
