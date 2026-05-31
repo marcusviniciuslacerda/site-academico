@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Eventos - IFPI</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    
+    <header>
+
+        <div class="logo">
+            <h1>IFPI Eventos</h1>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="aluno.html">Área do Aluno</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+   
+    <section class="titulo-pagina">
+
+        <h2>Cadastro de Evento</h2>
+
+        <p>
+            Preencha as informações abaixo para cadastrar um novo evento acadêmico.
+        </p>
+
+    </section>
+
+   
+    <section class="cadastro-evento">
+
+        <form>
+
+            <div class="campo">
+                <label for="titulo">Título do Evento</label>
+                <input type="text" id="titulo" placeholder="Digite o nome do evento">
+            </div>
+
+            <div class="campo">
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" rows="6" placeholder="Descreva o evento"></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="categoria">Categoria</label>
+
+                <select id="categoria">
+                    <option>Palestra</option>
+                    <option>Workshop</option>
+                    <option>Minicurso</option>
+                    <option>Semana Acadêmica</option>
+                    <option>Seminário</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="data">Data</label>
+                <input type="date" id="data">
+            </div>
+
+            <div class="campo">
+                <label for="hora">Horário</label>
+                <input type="time" id="hora">
+            </div>
+
+            <div class="campo">
+                <label for="local">Local</label>
+                <input type="text" id="local" placeholder="Ex: Auditório Central">
+            </div>
+
+            <div class="campo">
+                <label for="vagas">Quantidade de Vagas</label>
+                <input type="number" id="vagas" placeholder="Ex: 100">
+            </div>
+
+            <div class="campo">
+                <label for="carga">Carga Horária</label>
+                <input type="number" id="carga" placeholder="Ex: 20">
+            </div>
+
+            <div class="campo">
+                <label for="imagem">Imagem do Evento</label>
+                <input type="file" id="imagem">
+            </div>
+
+            <div class="campo">
+                <button type="submit">
+                    Cadastrar Evento
+                </button>
+            </div>
+
+        </form>
+
+    </section>
+
+    
+    <footer>
+
+        <p>
+            © 2026 IFPI - Sistema de Eventos Acadêmicos
+        </p>
+
+    </footer>
+
+</body>
+</html>
