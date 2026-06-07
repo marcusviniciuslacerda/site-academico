@@ -1,7 +1,57 @@
+<<<<<<< Updated upstream
 /* ==========================================================================
    1. RESET E CONFIGURAÇÕES GERAIS
    ========================================================================== */
 * {
+=======
+
+img {
+    width: 350px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.logo img{
+    width: 150px; /* aumenta a logo */
+    height: 150px;
+    display: block;
+}
+
+.logo-texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-texto h1{
+    color: #f1eded;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+}
+
+.logo-texto h4{
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1;
+    
+}
+
+
+
+
+/* Reset */
+*{
+>>>>>>> Stashed changes
     margin: 0;
     padding: 0;
     box-sizing: border-box;
