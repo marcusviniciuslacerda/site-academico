@@ -234,36 +234,64 @@ footer {
 }
 
 /* ==========================================================================
-   6. RESPONSIVIDADE CORRIGIDA (Sem quebrar o layout original)
+   6. RESPONSIVIDADE CORRIGIDA (Menu adaptável e expansivo no celular)
    ========================================================================== */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-        padding: 20px 20px;
+        flex-direction: column; /* Alinha Logo e Menu um embaixo do outro */
+        align-items: center;
+        gap: 20px;
+        padding: 20px 5%;
         min-height: auto;
     }
 
-    /* Remove o posicionamento absoluto APENAS no celular para não amassar */
+    .logo {
+        flex-direction: column; /* No celular, empilha o desenho da logo e o texto */
+        text-align: center;
+        gap: 8px;
+    }
+
+    /* Remove o absoluto que quebrava o layout no celular */
     nav {
-        position: static;
-        transform: none;
-        margin-left: 0;
+        position: static; 
+        transform: none;  
+        width: 100%;      /* Força o menu a ocupar a largura total disponível */
+    }
+
+    /* Transforma o menu em abas expansivas que quebram linha se necessário */
+    nav ul {
+        flex-direction: row; 
+        flex-wrap: wrap;      /* Se não couber na mesma linha, ele joga para baixo com elegância */
+        justify-content: center;
+        gap: 12px;           /* Espaçamento ideal para o toque do dedo */
         width: 100%;
     }
 
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+    nav ul li {
+        /* Faz com que cada link se comporte como um botão/aba mais fácil de clicar */
+        flex: 1 1 auto; 
+        text-align: center;
     }
 
+    nav ul li a {
+        display: block;
+        padding: 8px 12px;
+        background-color: rgba(255, 255, 255, 0.1); /* Cria um fundo leve estilo aba */
+        border-radius: 6px;
+        font-size: 15px; /* Diminui levemente para caber melhor em telas pequenas */
+    }
+
+    /* Título e Formulário */
     .titulo-pagina h2 {
         font-size: 2rem;
     }
 
+    .cadastro-evento {
+        padding: 20px 10px; /* Reduz a margem lateral para aproveitar a tela do celular */
+    }
+
     form {
-        padding: 25px 20px;
+        padding: 25px 15px; /* Dá mais espaço interno para os campos no celular */
+        border-radius: 10px;
     }
 }
