@@ -24,7 +24,7 @@ header {
     padding: 10px 5%; 
     min-height: 70px; 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    position: relative; /* Mantém o cabeçalho como ponto de referência */
+    position: relative; /* Mantém o cabeçalho como ponto de referência original */
     z-index: 1000;
     width: 100%;
 }
@@ -65,7 +65,7 @@ header {
     line-height: 1.1;
 }
 
-/* Também mantém compatibilidade caso o HTML antigo com apenas h1 esteja rodando */
+/* Mantém compatibilidade caso o HTML antigo com apenas h1 esteja rodando */
 .logo h1 {
     color: #ffffff;
     font-size: 22px;
@@ -74,7 +74,7 @@ header {
     margin: 0;
 }
 
-/* FORÇANDO O MENU PARA A DIREITA (INDEPENDENTE DO HTML) */
+/* FORÇANDO O MENU PARA A DIREITA (Original do seu projeto) */
 nav {
     position: absolute;
     right: 5%; /* Alinha perfeitamente com a margem direita do header */
@@ -136,7 +136,7 @@ nav ul li a:hover {
 form {
     background: white;
     width: 100%;
-    max-width: 650px; /* Mantém o formulário centralizado e com tamanho confortável */
+    max-width: 650px; 
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.06);
@@ -149,7 +149,6 @@ form {
     flex-direction: column;
 }
 
-/* Evita que o último botão herde margem desnecessária */
 .campo:last-child {
     margin-bottom: 0;
 }
@@ -176,10 +175,9 @@ form textarea {
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
     background-color: #fafafa;
-    font-family: inherit; /* Mantém a fonte Arial no campo de texto */
+    font-family: inherit;
 }
 
-/* Efeito ao focar no campo (Estilo idêntico à busca da sua Home) */
 form input:focus,
 form select:focus,
 form textarea:focus {
@@ -188,7 +186,6 @@ form textarea:focus {
     box-shadow: 0 0 0 3px rgba(25, 135, 84, 0.25);
 }
 
-/* Estilização específica do campo de Upload de Arquivo */
 form input[type="file"] {
     background: #f4f6f8;
     padding: 10px;
@@ -197,12 +194,10 @@ form input[type="file"] {
     cursor: pointer;
 }
 
-/* Caixa de descrição ajustável apenas verticalmente */
 form textarea {
     resize: vertical;
 }
 
-/* Botão de Envio (Cadastrar Evento) */
 form button[type="submit"] {
     width: 100%;
     background-color: #198754;
@@ -222,7 +217,7 @@ form button[type="submit"]:hover {
 }
 
 form button[type="submit"]:active {
-    transform: scale(0.98); /* Pequeno efeito de clique */
+    transform: scale(0.98);
 }
 
 /* ==========================================================================
@@ -239,18 +234,23 @@ footer {
 }
 
 /* ==========================================================================
-   6. RESPONSIVIDADE (Telas menores e Celulares)
+   6. RESPONSIVIDADE CORRIGIDA (Sem quebrar o layout original)
    ========================================================================== */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         gap: 15px;
         text-align: center;
-        padding: 20px;
+        padding: 20px 20px;
+        min-height: auto;
     }
 
+    /* Remove o posicionamento absoluto APENAS no celular para não amassar */
     nav {
+        position: static;
+        transform: none;
         margin-left: 0;
+        width: 100%;
     }
 
     nav ul {

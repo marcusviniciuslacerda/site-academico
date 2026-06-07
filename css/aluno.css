@@ -24,7 +24,7 @@ header {
     padding: 10px 5%; 
     min-height: 70px; 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    position: relative; /* Mantém o cabeçalho como ponto de referência */
+    position: relative; /* Mantém o cabeçalho como ponto de referência original */
     z-index: 1000;
     width: 100%;
 }
@@ -65,7 +65,7 @@ header {
     line-height: 1.1;
 }
 
-/* Também mantém compatibilidade caso o HTML antigo com apenas h1 esteja rodando */
+/* Mantém compatibilidade caso o HTML antigo com apenas h1 esteja rodando */
 .logo h1 {
     color: #ffffff;
     font-size: 22px;
@@ -74,7 +74,7 @@ header {
     margin: 0;
 }
 
-/* FORÇANDO O MENU PARA A DIREITA (INDEPENDENTE DO HTML) */
+/* FORÇANDO O MENU PARA A DIREITA (Original do seu projeto) */
 nav {
     position: absolute;
     right: 5%; /* Alinha perfeitamente com a margem direita do header */
@@ -155,7 +155,7 @@ nav ul li a:hover {
     padding: 25px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    border-top: 5px solid #198754; /* Linha verde no topo do card */
+    border-top: 5px solid #198754;
     transition: transform 0.3s ease;
 }
 
@@ -190,7 +190,6 @@ nav ul li a:hover {
     padding-bottom: 5px;
 }
 
-/* Estilização da Tabela */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -221,7 +220,7 @@ tr:last-child {
 }
 
 tr:hover {
-    background-color: #f8f9fa; /* Efeito hover discreto nas linhas */
+    background-color: #f8f9fa;
 }
 
 /* ==========================================================================
@@ -296,18 +295,23 @@ footer {
 }
 
 /* ==========================================================================
-   8. RESPONSIVIDADE (Telas menores e Celulares)
+   8. RESPONSIVIDADE CORRIGIDA (Sem quebrar o layout original)
    ========================================================================== */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         gap: 15px;
         text-align: center;
-        padding: 20px;
+        padding: 20px 20px;
+        min-height: auto;
     }
 
+    /* Remove o posicionamento absoluto APENAS no celular para não amassar */
     nav {
+        position: static;
+        transform: none;
         margin-left: 0;
+        width: 100%;
     }
 
     nav ul {
@@ -320,13 +324,12 @@ footer {
         font-size: 1.8rem;
     }
 
-    /* Transforma a tabela em blocos legíveis no celular */
     table, thead, tbody, th, td, tr {
         display: block;
     }
 
     th {
-        display: none; /* Esconde o cabeçalho da tabela no mobile */
+        display: none; 
     }
 
     tr {
@@ -347,9 +350,8 @@ footer {
         border-bottom: none;
     }
 
-    /* Adiciona etiquetas automáticas para identificar os dados na tabela mobile */
     td::before {
-        content: attr(data-label); /* Dica: se quiser usar isso perfeito, adicione data-label="Evento" no HTML */
+        content: attr(data-label); 
         position: absolute;
         left: 20px;
         width: 45%;
