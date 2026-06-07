@@ -1,286 +1,352 @@
-/* =========================
-   RESET
-========================= */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E RESETS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background:#f4f6f9;
-    color:#333;
-    line-height:1.6;
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    line-height: 1.6;
 }
 
 
-/* HEADER */
-header{
-    background: #198754;
+/* ==========================================================================
+   2. CABEÇALHO (HEADER) E MENU DE NAVEGAÇÃO
+   ========================================================================== */
+header {
+    background-color: #198754; 
     display: flex;
     align-items: center;
-    padding: 12px 7%;
-    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+    padding: 10px 5%; 
+    min-height: 70px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative; /* Mantém o cabeçalho como ponto de referência */
+    z-index: 1000;
+    width: 100%;
 }
 
-/* LOGO */
-.logo{
+/* Container da Logo */
+.logo {
     display: flex;
     align-items: center;
+    gap: 12px;
 }
 
-.logo img{
-    width: 75px;
+.logo img {
+    height: 45px;
+    width: auto;
+    display: block;
 }
 
-.logo-texto{
-    margin-left: 10px;
+.logo-texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.logo-texto h1{
-    color: white;
+.logo-texto h1 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.logo-texto h4 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.1;
+}
+
+/* Também mantém compatibilidade caso o HTML antigo com apenas h1 esteja rodando */
+.logo h1 {
+    color: #ffffff;
     font-size: 22px;
+    font-weight: 700;
+    white-space: nowrap;
     margin: 0;
-    line-height: 1;
 }
 
-.logo-texto h4{
-    color: white;
-    margin: 0;
-    font-size: 15px;
-    font-weight: normal;
+/* FORÇANDO O MENU PARA A DIREITA (INDEPENDENTE DO HTML) */
+nav {
+    position: absolute;
+    right: 5%; /* Alinha perfeitamente com a margem direita do header */
+    top: 50%;
+    transform: translateY(-50%); /* Centraliza o menu verticalmente */
 }
 
-/* EMPURRA O MENU PARA O CANTO DIREITO */
-nav{
-    margin-left: auto;
-}
-
-nav ul{
+nav ul {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
 }
 
-nav ul li a{
-    color: white;
+nav ul li a {
+    color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
     font-weight: 600;
+    font-size: 16px;
+    transition: color 0.2s ease;
+    white-space: nowrap;
 }
 
-/* =========================
-   BANNER
-========================= */
-.banner-evento{
-    width:100%;
-    height:450px;
-    overflow:hidden;
+nav ul li a:hover {
+    color: #ffffff;
 }
 
-.banner-evento img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
+
+
+/* ==========================================================================
+   3. BANNER PRINCIPAL
+   ========================================================================== */
+.banner-evento {
+    width: 100%;
+    height: auto; /* Mudado de 400px fixos para auto */
+    min-height: 200px; /* Garante um tamanho mínimo mesmo sem imagem */
+    background-color: #e9ecef; /* Cor de fundo caso a imagem falhe */
+    overflow: hidden;
 }
 
-/* =========================
-   INFORMAÇÕES
-========================= */
-.informacoes-evento{
-    max-width:1200px;
-    margin:50px auto;
-    padding:0 20px;
+.banner-evento img {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* Limita a altura máxima de forma flexível */
+    object-fit: cover;
+    display: block;
 }
 
-.informacoes-evento h2{
-    color:#198754;
-    font-size:2.3rem;
-    margin-bottom:20px;
+/* ==========================================================================
+   4. SEÇÃO DE INFORMAÇÕES DO EVENTO
+   ========================================================================== */
+.informacoes-evento {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
 }
 
-.informacoes-evento > p{
-    text-align:justify;
-    margin-bottom:25px;
-    font-size:1.05rem;
+.informacoes-evento h2 {
+    color: #198754;
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
-/* DADOS */
-.dados-evento{
-    background:white;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
-    margin-bottom:25px;
+.informacoes-evento p {
+    font-size: 17px;
+    color: #495057;
+    text-align: justify;
+    margin-bottom: 30px;
 }
 
-.dados-evento p{
-    margin:10px 0;
+/* Bloco de dados (Data, Horário, Local...) */
+.dados-evento {
+    background-color: #ffffff;
+    border-left: 5px solid #198754;
+    padding: 20px 25px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
 }
 
-/* BOTÃO */
-button{
-    background:#198754;
-    color:white;
-    border:none;
-    padding:14px 30px;
-    border-radius:8px;
-    font-size:1rem;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.3s;
+.dados-evento p {
+    margin: 12px 0;
+    font-size: 16px;
+    color: #333333;
+    text-align: left;
 }
 
-button:hover{
-    background:#146c43;
+.dados-evento strong {
+    color: #198754;
 }
 
-/* =========================
-   PROGRAMAÇÃO
-========================= */
-.programacao{
-    max-width:1200px;
-    margin:60px auto;
-    padding:0 20px;
+/* Botão de Inscrição */
+button {
+    background-color: #198754;
+    color: #ffffff;
+    border: none;
+    padding: 14px 35px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(25, 135, 84, 0.2);
+    transition: background-color 0.2s, transform 0.1s;
 }
 
-.programacao h2{
-    color:#198754;
-    margin-bottom:25px;
+button:hover {
+    background-color: #146c43;
 }
 
-table{
-    width:100%;
-    border-collapse:collapse;
-    background:white;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
+button:active {
+    transform: scale(0.98);
 }
 
-th{
-    background:#198754;
-    color:white;
-    padding:15px;
+/* ==========================================================================
+   5. SEÇÃO DE PROGRAMAÇÃO (TABELA)
+   ========================================================================== */
+.programacao {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
 }
 
-td{
-    padding:15px;
-    border-bottom:1px solid #eee;
+.programacao h2 {
+    color: #198754;
+    font-size: 28px;
+    margin-bottom: 25px;
 }
 
-tr:hover{
-    background:#f1f8f4;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: none; /* Ignora o border="1" antigo do HTML */
 }
 
-/* =========================
-   PALESTRANTES
-========================= */
-.palestrantes{
-    max-width:1200px;
-    margin:60px auto;
-    padding:0 20px;
+th, td {
+    padding: 18px 20px;
+    text-align: left;
 }
 
-.palestrantes h2{
-    text-align:center;
-    color:#198754;
-    margin-bottom:30px;
+th {
+    background-color: #198754;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
 }
 
-.lista-palestrantes{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
+td {
+    border-bottom: 1px solid #e9ecef;
+    color: #495057;
+    font-size: 16px;
 }
 
-.palestrante{
-    background:white;
-    width:320px;
-    padding:25px;
-    border-radius:15px;
-    text-align:center;
-    box-shadow:0 3px 12px rgba(0,0,0,.08);
-    transition:.3s;
+tr:last-child td {
+    border-bottom: none;
 }
 
-.palestrante:hover{
-    transform:translateY(-5px);
+tr:hover {
+    background-color: #f1f8f4;
 }
 
-.palestrante img{
-    width:120px;
-    height:120px;
-    border-radius:50%;
-    object-fit:cover;
-    margin-bottom:15px;
+/* ==========================================================================
+   6. SEÇÃO DE PALESTRANTES
+   ========================================================================== */
+.palestrantes {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
 }
 
-.palestrante h3{
-    color:#198754;
-    margin-bottom:10px;
+.palestrantes h2 {
+    color: #198754;
+    font-size: 28px;
+    margin-bottom: 30px;
 }
 
-/* =========================
-   FOOTER
-========================= */
-footer{
-    background:#212529;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:60px;
+.lista-palestrantes {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
-/* =========================
-   RESPONSIVO
-========================= */
-@media(max-width:768px){
+.palestrante {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 30px 25px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #198754;
+}
 
-    header{
-        flex-direction:column;
-        gap:15px;
-        text-align:center;
+.palestrante img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.palestrante h3 {
+    color: #212529;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.palestrante p {
+    color: #6c757d;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* ==========================================================================
+   7. RODAPÉ (FOOTER)
+   ========================================================================== */
+footer {
+    background-color: #212529;
+    color: #adb5bd;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 80px;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   8. RESPONSIVIDADE (Telas menores e Celulares)
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 20px;
     }
 
-    .logo{
-        justify-content:center;
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    nav ul{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:15px;
+    .banner-evento {
+        height: 250px;
     }
 
-    .banner-evento{
-        height:250px;
+    .informacoes-evento h2, 
+    .programacao h2, 
+    .palestrantes h2 {
+        font-size: 24px;
     }
 
-    .informacoes-evento h2{
-        font-size:1.8rem;
+    /* Permite rolagem horizontal na tabela se a tela for muito pequena */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
     }
 
-    table{
-        display:block;
-        overflow-x:auto;
+    .lista-palestrantes {
+        justify-content: center;
     }
 
-    .palestrante{
-        width:100%;
-    }
-
-    .logo img{
-        width:60px;
-    }
-
-    .logo-texto h1{
-        font-size:1.1rem;
-    }
-
-    .logo-texto h4{
-        font-size:.9rem;
+    .palestrante {
+        max-width: 100%;
     }
 }
