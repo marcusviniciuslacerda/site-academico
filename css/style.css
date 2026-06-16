@@ -182,6 +182,7 @@ nav a:hover {
     color: white;
     max-width: 500px;
     z-index: 2;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
 }
 
 .banner-texto h2 {

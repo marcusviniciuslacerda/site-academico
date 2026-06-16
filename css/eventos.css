@@ -320,41 +320,43 @@ footer {
    ========================================================================== */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: column; /* Alinha Logo e Menu um embaixo do outro */
+        align-items: center;
+        gap: 20px;
+        padding: 20px 5%;
+        min-height: auto;
+    }
+
+    .logo {
+        flex-direction: column; /* No celular, empilha o desenho da logo e o texto */
         text-align: center;
-        padding: 20px;
+        
     }
 
-    nav ul {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+    /* Remove o absoluto que quebrava o layout no celular */
+    nav {
+        position: static; 
+        transform: none;  
+        width: 100%;      /* Força o menu a ocupar a largura total disponível */
     }
 
-    .banner-evento {
-        height: 250px;
-        object-fit: cover;
-    }
-
-    .informacoes-evento h2, 
-    .programacao h2, 
-    .palestrantes h2 {
-        font-size: 24px;
-    }
-
-    /* Permite rolagem horizontal na tabela se a tela for muito pequena */
-    table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
-    .lista-palestrantes {
-        justify-content: center;
-    }
-
-    .palestrante {
-        max-width: 100%;
-    }
+    /* Transforma o menu em abas expansivas que quebram linha se necessário */
+    nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0px;
 }
+
+    nav ul li {
+        /* Faz com que cada link se comporte como um botão/aba mais fácil de clicar */
+        flex: auto ; 
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-size: 17px; /* Diminui levemente para caber melhor em telas pequenas */
+    }
