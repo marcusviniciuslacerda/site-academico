@@ -85,6 +85,8 @@ header {
     width: 100%;
 }
 
+
+
 /* Container da Logo (Imagem + Texto) */
 .logo {
     display: flex;
@@ -158,6 +160,7 @@ nav a:hover {
     position: relative;
     width: 100%;
     overflow: hidden;
+   
 }
 
 .banner img {
@@ -165,7 +168,11 @@ nav a:hover {
     height: 450px;
     object-fit: cover;
     display: block;
+    filter: brightness(60%);
+    
 }
+
+
 
 .banner-texto {
     position: absolute;
@@ -363,7 +370,7 @@ footer {
 
     .banner img {
         height: 300px;
-    }
+    }           
 
     .banner-texto {
         left: 5%;

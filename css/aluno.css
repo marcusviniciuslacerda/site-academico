@@ -228,7 +228,10 @@ tr:hover {
    ========================================================================== */
 .certificados {
     padding: 30px 8% 60px;
+    
 }
+
+
 
 .certificados h2 {
     color: #198754;
@@ -276,6 +279,7 @@ tr:hover {
     cursor: pointer;
     transition: 0.3s;
     width: 100%;
+     
 }
 
 .certificado button:hover {
