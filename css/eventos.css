@@ -326,6 +326,7 @@ footer {
 
     .banner-evento {
         height: 250px;
+        object-fit: cover;
     }
 
     .informacoes-evento h2, 

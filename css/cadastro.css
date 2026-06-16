@@ -259,13 +259,12 @@ footer {
     }
 
     /* Transforma o menu em abas expansivas que quebram linha se necessário */
-    nav ul {
-        flex-direction: row; 
-        flex-wrap: wrap;      /* Se não couber na mesma linha, ele joga para baixo com elegância */
-        justify-content: center;
-        gap: 12px;           /* Espaçamento ideal para o toque do dedo */
-        width: 100%;
-    }
+    nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
 
     nav ul li {
         /* Faz com que cada link se comporte como um botão/aba mais fácil de clicar */
