@@ -248,7 +248,7 @@ footer {
     .logo {
         flex-direction: column; /* No celular, empilha o desenho da logo e o texto */
         text-align: center;
-        gap: 8px;
+        
     }
 
     /* Remove o absoluto que quebrava o layout no celular */
@@ -263,21 +263,20 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 0px;
 }
 
     nav ul li {
         /* Faz com que cada link se comporte como um botão/aba mais fácil de clicar */
-        flex: 1 1 auto; 
+        flex: auto ; 
         text-align: center;
     }
 
     nav ul li a {
         display: block;
         padding: 8px 12px;
-        background-color: rgba(255, 255, 255, 0.1); /* Cria um fundo leve estilo aba */
         border-radius: 6px;
-        font-size: 15px; /* Diminui levemente para caber melhor em telas pequenas */
+        font-size: 17px; /* Diminui levemente para caber melhor em telas pequenas */
     }
 
     /* Título e Formulário */
