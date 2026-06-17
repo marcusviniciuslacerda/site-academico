@@ -274,7 +274,7 @@ footer {
 
     nav ul li a {
         display: block;
-        padding: 8px 12px;
+        padding: 5px;
         border-radius: 6px;
         font-size: 17px; /* Diminui levemente para caber melhor em telas pequenas */
     }
