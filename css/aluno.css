@@ -18,7 +18,7 @@ body {
    2. CABEÇALHO (HEADER) E MENU DE NAVEGAÇÃO (IDÊNTICO À HOME)
    ========================================================================== */
 header {
-    background-color: #198754; 
+    background-color: #006b2f; 
     display: flex;
     align-items: center;
     padding: 10px 5%; 
@@ -107,7 +107,7 @@ nav ul li a:hover {
    3. SEÇÃO: PERFIL DO ALUNO (BANNER PRINCIPAL)
    ========================================================================== */
 .perfil-aluno {
-    background: linear-gradient(135deg, #198754, #157347);
+    background: linear-gradient(135deg, #006b2f, #004d26);
     color: white;
     text-align: center;
     padding: 50px 20px;
@@ -345,7 +345,7 @@ footer {
         display: block;
         
         border-radius: 6px;
-        font-size: 15px; 
+        font-size: 17px; 
     }
 
     /* 2. Redução de margens gerais no celular para ganhar espaço */
