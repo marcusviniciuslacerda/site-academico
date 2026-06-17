@@ -74,7 +74,7 @@ header {
     margin: 0;
 }
 
-/* FORÇANDO O MENU PARA A DIREITA (Original do seu projeto) */
+/* FORÇANDO O MENU PARA A DIREITA  */
 nav {
     position: absolute;
     right: 5%; /* Alinha perfeitamente com a margem direita do header */
@@ -392,7 +392,7 @@ footer {
         border-bottom: none;
     }
 
-    /* Injeta o nome da coluna de forma elegante no lado esquerdo do celular */
+    /* Injeta o nome da coluna no lado esquerdo do celular */
     td::before {
         content: attr(data-label); 
         position: absolute;

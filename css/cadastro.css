@@ -74,7 +74,7 @@ header {
     margin: 0;
 }
 
-/* FORÇANDO O MENU PARA A DIREITA (Original do seu projeto) */
+/* FORÇANDO O MENU PARA A DIREITA */
 nav {
     position: absolute;
     right: 5%; /* Alinha perfeitamente com a margem direita do header */

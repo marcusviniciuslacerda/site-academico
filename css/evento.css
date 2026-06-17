@@ -54,7 +54,7 @@ header {
 
 .logo-texto h1 {
     color: white;
-    font-size: 20px; /* Corrigido de 0.5rem (que deixava minúsculo) para 20px */
+    font-size: 20px; 
     font-weight: 700;
     margin: 0;
     line-height: 1.1;
