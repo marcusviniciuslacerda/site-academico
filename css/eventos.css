@@ -296,7 +296,7 @@ tr:hover {
 }
 
 .palestrante{
-    transition: transform .3s;
+    transition: transform .0s;
 }
 
 .palestrante:hover{
